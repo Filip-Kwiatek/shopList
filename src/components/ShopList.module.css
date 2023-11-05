@@ -1,9 +1,60 @@
-.background {
-  background-color: rgb(140, 153, 174);
-  padding: 0;
-  margin: 0;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
-.background h1 {
-  text-align: center;
+.form {
+  margin-top: 50px;
+  width: 75%;
+  background-color: #222;
+  border: 1px solid white;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.item:first-child {
+  margin-left: 20px;
+}
+
+.item {
+  background-color: #222;
+  display: inline-block;
+  margin-left: 80px;
+}
+
+.item:last-child {
+  margin-left: 40px;
+}
+
+.label {
+  background-color: #222;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 260px;
+  height: 22px;
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+
+.button {
+  background-color: aliceblue;
+  border: 0;
+  border-radius: 12px;
+  width: 105px;
+  padding: 5px;
+  height: 28px;
+  margin-bottom: 15px;
+  color: black;
+  font-size: 16px;
+  transition-duration: 0.3s;
+}
+
+.button:hover {
+  background-color: rgb(190, 125, 4);
+  color: black;
 }
