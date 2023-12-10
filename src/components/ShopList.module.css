@@ -1,14 +1,15 @@
 .wrapper {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form {
   margin-top: 50px;
   width: 75%;
   background-color: #222;
-  border: 1px solid white;
+  border: 1px solid #444;
   color: aliceblue;
   font-size: 20px;
 }
@@ -56,5 +57,17 @@
 
 .button:hover {
   background-color: rgb(190, 125, 4);
+  cursor: pointer;
   color: black;
+}
+
+.list {
+  margin-top: 25px;
+  width: 75%;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.list li {
+  list-style-type: none;
 }
