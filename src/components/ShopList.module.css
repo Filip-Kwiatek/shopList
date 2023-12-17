@@ -68,6 +68,27 @@
   font-size: 20px;
 }
 
-.list li {
+.list ul {
   list-style-type: none;
+  display: flex;
+}
+
+.list ul li {
+  margin-left: 230px;
+}
+
+.list ul li:first-child {
+  margin-left: -55px;
+}
+
+.list ul li:nth-child(2) {
+  margin-left: 5px;
+}
+
+.list ul li:last-child {
+  margin-left: 0px;
+}
+
+.list button {
+  margin-left: 122px;
 }

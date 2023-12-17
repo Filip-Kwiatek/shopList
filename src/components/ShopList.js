@@ -23,6 +23,11 @@ const ShopList = () => {
         note: form.note,
       },
     ]);
+    setForm({
+      product: "",
+      quantity: "",
+      note: "",
+    });
     return [...shopListState];
   };
 
@@ -39,18 +44,13 @@ const ShopList = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setForm({
-      product: "",
-      quantity: "",
-      note: "",
-    });
   };
 
   return (
     <div className={classes.wrapper}>
       <form className={classes.form} onSubmit={handleSubmit}>
         <div className={classes.item}>
-          <label className={classes.label}>Product</label>
+          <label className={classes.label}>Product:</label>
           <input
             className={classes.input}
             type="text"
@@ -60,17 +60,17 @@ const ShopList = () => {
           />
         </div>
         <div className={classes.item}>
-          <label className={classes.label}>Quantity</label>
+          <label className={classes.label}>Quantity:</label>
           <input
             className={classes.input}
-            type="text"
+            type="number"
             id="quantity"
             onChange={(e) => setForm({ ...form, quantity: e.target.value })}
             value={form.quantity}
           />
         </div>
         <div className={classes.item}>
-          <label className={classes.label}>Additional note</label>
+          <label className={classes.label}>Additional note:</label>
           <input
             className={classes.input}
             type="text"
@@ -105,19 +105,24 @@ const ShopList = () => {
         {shopListState.map((listItem, index) => {
           return (
             <>
-              <li key={listItem.id}>
-                {listItem.product} {listItem.quantity} {listItem.note}
-                <button
-                  className={classes.button}
-                  onClick={() => {
-                    setShopListState(
-                      shopListState.filter((item) => item.id !== listItem.id)
-                    );
-                  }}
-                >
-                  Delete
-                </button>
-              </li>
+              <ul key={listItem.id}>
+                <li>{listItem.id + 1})</li>
+                <li>Product: {listItem.product}</li>
+                <li>Quantity: {listItem.quantity}</li>
+                <li>Additional Note: {listItem.note}</li>
+                <li>
+                  <button
+                    className={classes.button}
+                    onClick={() => {
+                      setShopListState(
+                        shopListState.filter((item) => item.id !== listItem.id)
+                      );
+                    }}
+                  >
+                    Delete
+                  </button>
+                </li>
+              </ul>
             </>
           );
         })}
